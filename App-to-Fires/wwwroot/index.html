@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure OpenAI Chatbot con Voz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        #response {
+            margin-top: 20px;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            background-color: #f8f9fa;
+        }
+
+        .voice-controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Azure OpenAI Chatbot con Voz</h1>
+        <div class="input-group">
+            <label for="eventContext">Contexto del Evento:</label>
+            <input type="text" id="eventContext" placeholder="Ingresa el contexto del evento" required>
+        </div>
+        <div class="input-group">
+            <label for="userMessage">Tu Mensaje:</label>
+            <input type="text" id="userMessage" placeholder="Ingresa tu mensaje" required>
+        </div>
+        <button id="sendButton" onclick="sendMessage()">Enviar Texto</button>
+        <div class="voice-controls">
+            <button id="startVoiceButton" onclick="startVoiceRecognition()">Iniciar Grabación</button>
+        </div>
+        <div>
+            <h3>Respuesta:</h3>
+            <p id="response"></p>
+        </div>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            // ... tu código existente de envío de mensaje ...
+        }
+
+        async function startVoiceRecognition() {
+            const button = document.getElementById("startVoiceButton");
+            const responseElem = document.getElementById("response");
+
+            try {
+                button.disabled = true;
+                button.textContent = "Escuchando...";
+                responseElem.textContent = "Escuchando tu mensaje...";
+
+                const response = await fetch("/api/Chatbot/speech", {
+                    method: "POST"
+                });
+
+                const result = await response.json();
+                responseElem.textContent = `Tu mensaje: ${result.userMessage}\n\nRespuesta: ${result.response}`;
+            } catch (error) {
+                responseElem.textContent = "Error: " + error;
+            } finally {
+                button.disabled = false;
+                button.textContent = "Iniciar Grabación";
+            }
+        }
+    </script>
+</body>
+</html>
