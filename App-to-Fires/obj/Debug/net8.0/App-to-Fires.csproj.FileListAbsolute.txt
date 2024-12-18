@@ -285,3 +285,4 @@ C:/Users/ariel/Desktop/IA/App-For-Fires/App-to-Fires/bin/Debug/net8.0/runtimes/w
 /home/university/Descargas/Charla-12-dic-20241213T190635Z-001/Charla-12-dic/Charla-09-Dic/App-to-Fires/obj/Debug/net8.0/App-to-Fires.pdb
 /home/university/Descargas/Charla-12-dic-20241213T190635Z-001/Charla-12-dic/Charla-09-Dic/App-to-Fires/obj/Debug/net8.0/App-to-Fires.genruntimeconfig.cache
 /home/university/Descargas/Charla-12-dic-20241213T190635Z-001/Charla-12-dic/Charla-09-Dic/App-to-Fires/obj/Debug/net8.0/ref/App-to-Fires.dll
+/home/university/Descargas/Charla-12-dic-20241213T190635Z-001/Charla-12-dic/Charla-09-Dic/App-to-Fires/obj/Debug/net8.0/App-to-Fires.sourcelink.json
