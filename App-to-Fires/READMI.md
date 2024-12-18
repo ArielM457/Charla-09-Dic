@@ -10,7 +10,25 @@ https://microsoftlearning.github.io/mslearn-openai/Instructions/Exercises/01-get
 https://microsoftlearning.github.io/mslearn-ai-language/Instructions/Exercises/07-speech.html
 
 ## Clona el repositorio:
+https://github.com/ArielM457/Charla-09-Dic.git
 
+## Pasos necesarios:
+Crea el archivo appsettings.json en la raiz principal y pega el siguiente texto 
+""{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "AzureOAIEndpoint": "your-endpoint-of-OpenAI",
+  "AzureOAIKey": "your-ApiKey-of-OpenAI",
+  "AzureOAIDeploymentName": "name-of-modelo-of-Open-AI",
+  "AzureSpeech": {
+    "ApiKey": "your Api-Key-of-Service-Speech",
+    "Region": "Region-of-Service-Speech"
+  }}
 
 # Contactame:
 Soy Ariel Javier Murillo De La Barra
